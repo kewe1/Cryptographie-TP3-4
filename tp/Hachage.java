@@ -12,18 +12,18 @@ public class Hachage {
         String sha1 = "";
         byte[] tab;
         try {
-            tab = Sha1(mdp, sha1);
-            sha1=String.format("%040x",new BigInteger(1,tab));
+            tab = Sha1(mdp);
+            sha1 = String.format("%040x", new BigInteger(1, tab));
         } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        System.out.println("Voici votre mot de passe haché : " +sha1);
+        System.out.println("Voici votre mot de passe haché : " + sha1);
         scanner.close();
 
     }
 
-    private static byte[] Sha1(String mdp, String sha1) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+    public static byte[] Sha1(String mdp) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         MessageDigest md = MessageDigest.getInstance("SHA-1");
         md.reset();
         md.update(mdp.getBytes("UTF-8"));
