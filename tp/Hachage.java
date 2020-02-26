@@ -29,19 +29,22 @@ public class Hachage {
         String msg=scanner.nextLine();
         try {
             byte[] res1=hmacSha1(key,msg);
-            byte[] res512=hmacSha512(key,msg);
             String res1Byte="";
             for (byte b : res1) {
                 res1Byte+=b+" ";
             }
+            System.out.println("Voici le HMAC SHA1 en chaine d'octet : "+res1Byte);
+            String hmacSha1=String.format("%040x", new BigInteger(1,res1));
+            System.out.println("Voici le HMAC SHA1 en hexadécimal : "+hmacSha1);
+
+            System.out.println(" ");
+
+            byte[] res512=hmacSha512(key,msg);
             String res512Byte="";
             for (byte b : res512) {
                 res512Byte+=b+" ";
             }
-            System.out.println("Voici le HMAC SHA1 en chaine d'octet : "+res1Byte);
-            String hmacSha1=String.format("%040x", new BigInteger(1,res1));
-            System.out.println("Voici le HMAC SHA1 en hexadécimal : "+hmacSha1);
-            System.out.println(" ");
+
             System.out.println("Voici le HMAC SHA512 en chaine d'octet : "+res512Byte);
             String hmacSha512=String.format("%040x", new BigInteger(1,res512));
             System.out.println("Voici le HMAC SHA512 en hexadécimal : "+hmacSha512);
