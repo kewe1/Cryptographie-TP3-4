@@ -12,4 +12,4 @@ TP fait en java
 ## Exercice 2 : 
     On remarque que en utilisant la même clé et le même message en utilisant SHA1 puis SHA512 on obtient :
         -Un résultat différent en octet et en hexadécimal
-        -Une longueur différente (en hexadécimal SHA1 : 40 caractères | SHA512 : 128 caractères ) 
+        -Une longueur différente (SHA1 : 40 caractères / 160 bits | SHA512 : 128 caractères / 512 bits ) 
